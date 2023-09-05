@@ -6,14 +6,27 @@
 
     <div class="row mt-5">
       @foreach ($blogs as $blog)
-        <div class="col-md-4">
-          <div class="card mt-5">
-            <div class="card-body">
-              <h2>{{ $blog['title'] }}</h2>
-              <p>{{ $blog['body'] }}</p>
+        @if ($blog['status'] == 1)
+          <div class="col-md-4">
+            <div class="card mt-5">
+              <div class="card-body">
+                <h2>{{ $blog['title'] }}</h2>
+                <p>{{ $blog['body'] }}</p>
+                <div class="btn btn-sm btn-info">LIKE</div>
+              </div>
             </div>
           </div>
-        </div>
+          @else
+          <div class="col-md-4">
+            <div class="card mt-5">
+              <div class="card-body">
+                <h2>{{ $blog['title'] }}</h2>
+                <p>{{ $blog['body'] }}</p>
+                <div class="btn btn-sm btn-warning">Read More</div>
+              </div>
+            </div>
+          </div>
+        @endif
       @endforeach
     </div>
   </main>
