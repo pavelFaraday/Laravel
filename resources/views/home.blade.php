@@ -29,5 +29,35 @@
         @endif
       @endforeach
     </div>
+
+    @php
+      echo 'Hello World';
+      $data = true;
+      $numb = 2;
+      $secondNumb = '';
+    @endphp
+
+    @isset($data)
+      <div class="alert alert-success mt-5">Success</div>
+    @endisset
+
+    @switch($numb)
+      @case(1)
+      <div class="alert alert-danger mt-5">Danger</div>
+        @break
+      @case(2)
+      <div class="alert alert-info mt-5">Info</div>
+        @break
+      @default
+      <div class="alert alert-warning mt-5">Warning</div>
+    @endswitch
+
+    @empty($secondNumb)
+      <div class="alert alert-info mt-5">This is Empty</div>
+    @endempty
+
+
+
+
   </main>
 @endsection
