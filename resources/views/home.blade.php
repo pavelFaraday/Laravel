@@ -52,10 +52,6 @@
       <div class="alert alert-warning mt-5">Warning</div>
     @endswitch
 
-    @empty($secondNumb)
-      <div class="alert alert-info mt-5">This is Empty</div>
-    @endempty
-
 
 
 
