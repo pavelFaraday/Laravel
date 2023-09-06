@@ -4,7 +4,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PersonController;
+use Illuminate\Auth\Events\Login;
 // use App\Http\Controllers\PersonController as Person;
 use Illuminate\Support\Facades\Route;
 
@@ -36,9 +38,11 @@ Route::get('/', function () {
 Route::get('/home', HomeController::class);
 Route::get('about', [AboutController::class, 'index'])->name('about');
 Route::get('contact', [ContactController::class, 'index']);
-
+Route::get('/login', [LoginController::class, 'index'])->name('login');
 // Resource Controller
 Route::resource('blog', BlogController::class);
+
+
 
 
 
