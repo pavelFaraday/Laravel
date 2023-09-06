@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PersonController;
 // use App\Http\Controllers\PersonController as Person;
@@ -31,11 +32,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Regular Controllers
 Route::get('/home', [HomeController::class, 'index']);
-
 Route::get('about', [AboutController::class, 'index'])->name('about');
-
 Route::get('contact', [ContactController::class, 'index']);
+
+// Resource Controller
+Route::resource('blog', BlogController::class);
 
 
 
