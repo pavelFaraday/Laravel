@@ -1,9 +1,13 @@
 <?php
 
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PersonController;
 // use App\Http\Controllers\PersonController as Person;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,40 +31,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function(){
-    $blogs = [
-        [
-            'title' => 'Title One',
-            'body' => 'This is body text',
-            'status' => 1
+Route::get('/home', [HomeController::class, 'index']);
 
-        ],
-        [
-            'title' => 'Title Two',
-            'body' => 'This is body text',
-            'status' => 0
-        ],
-        [
-            'title' => 'Title Three',
-            'body' => 'This is body text',
-            'status' => 1
-        ],
-        [
-            'title' => 'Title Four',
-            'body' => 'This is body text',
-            'status' => 0
-        ]
-    ];
-    return view('home', compact('blogs'));
-});
+Route::get('about', [AboutController::class, 'index'])->name('about');
 
-Route::get('about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('contact', function () {
-    return view('contact');
-});
+Route::get('contact', [ContactController::class, 'index']);
 
 
 
