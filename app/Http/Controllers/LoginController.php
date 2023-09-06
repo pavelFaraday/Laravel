@@ -11,11 +11,10 @@ class LoginController extends Controller
     {
         return view('login');
     }
-
+    
     public function handleLogin (Request $request)
     {
         // dd($request->all());
-
 
         // alfa - input must only contain only letters
         // min6 - input must contain minimum 6 characters
@@ -25,6 +24,11 @@ class LoginController extends Controller
             'name' => ['required', 'alpha', 'min:6', 'max:15'],
             'email' =>  ['required', 'email'],
             'password' =>  ['required']
+        ], [
+            // overwrite predefined validation error alert
+            'name.required' => 'The user name field is required!', 
+            'name.alpha' => 'User name should only contain letters!',
+            'email.email' => 'This is not a email!'
         ]);
 
         return $request;
