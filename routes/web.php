@@ -39,6 +39,12 @@ Route::get('/home', HomeController::class);
 Route::get('about', [AboutController::class, 'index'])->name('about');
 Route::get('contact', [ContactController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.submit');
+
+
+
+
+
 // Resource Controller
 Route::resource('blog', BlogController::class);
 

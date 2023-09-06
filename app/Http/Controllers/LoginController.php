@@ -10,4 +10,10 @@ class LoginController extends Controller
     {
         return view('login');
     }
+    // for CSRF Token
+    public function handleLogin (Request $request)
+    {
+        dd($request->all());
+    }
 }
+                             
