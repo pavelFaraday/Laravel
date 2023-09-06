@@ -6,6 +6,11 @@
             
             <div class="card-body">
                 <h2 class="mb-5">Login Fom</h2>
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger">{{ $error }}</div>
+                    @endforeach
+                @endif
                 <form action="{{route('login.submit')}}" method="POST">
                     @csrf
                     <div class="mb-2">

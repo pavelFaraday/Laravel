@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// Predefined namespace for saving requests
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -10,10 +11,17 @@ class LoginController extends Controller
     {
         return view('login');
     }
-    // for CSRF Token
+
     public function handleLogin (Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        return $request;
     }
 }
                              
