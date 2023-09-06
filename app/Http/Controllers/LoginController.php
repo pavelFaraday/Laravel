@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 // Predefined namespace for saving requests
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -12,26 +13,8 @@ class LoginController extends Controller
         return view('login');
     }
     
-    public function handleLogin (Request $request)
+    public function handleLogin (LoginRequest $request)
     {
-        // dd($request->all());
-
-        // alfa - input must only contain only letters
-        // min6 - input must contain minimum 6 characters
-        // max:15 - input must contain maximum 15 characters
-        // email - The email field must be a valid email address
-        $request->validate([
-            'name' => ['required', 'alpha', 'min:6', 'max:15'],
-            'email' =>  ['required', 'email'],
-            'password' =>  ['required']
-        ], [
-            // overwrite predefined validation error alert
-            'name.required' => 'The user name field is required!', 
-            'name.alpha' => 'User name should only contain letters!',
-            'email.email' => 'This is not a email!'
-        ]);
-
         return $request;
     }
 }
-                                 
