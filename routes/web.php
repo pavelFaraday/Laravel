@@ -33,7 +33,7 @@ Route::get('/', function () {
 });
 
 // Regular Controllers
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', HomeController::class);
 Route::get('about', [AboutController::class, 'index'])->name('about');
 Route::get('contact', [ContactController::class, 'index']);
 
