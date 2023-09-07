@@ -45,6 +45,7 @@ class HomeController extends Controller
 
 
 
+
         /* -------------------------------------------------------------------------- */
         /*                         insert data - INSERT method                        */
         /* -------------------------------------------------------------------------- */
@@ -73,11 +74,11 @@ class HomeController extends Controller
 
 
 
-
         /* -------------------------------------------------------------------------- */
         /*                         update data - UPDATE method                        */
         /* -------------------------------------------------------------------------- */
 
+        /*
         DB::table('posts')->where('id', 13)->update([
             'title' => 'The Updated Data',
             'description' => 'Updated description',
@@ -85,9 +86,26 @@ class HomeController extends Controller
         ]);
 
         dd('success');
-
-
+        */
         
+
+
+
+        /* -------------------------------------------------------------------------- */
+        /*                         delete data - DELETE method                        */
+        /* -------------------------------------------------------------------------- */
+
+        // DB::table('posts')->where('id', 12)->delete();
+        // OR 
+        // DB::table('posts')->delete(15);
+
+        //dd('success');
+
+
+
+
+
+
         return view('home', compact('blogs'));
     }
 }
