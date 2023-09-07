@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i=1; $i<50 ; $i+1) { 
+        for ($i=1; $i<10 ; $i+1) { 
             DB::table('posts')->insert([
                 'title' => Str::random(20),
                 'description' => Str::random(200),

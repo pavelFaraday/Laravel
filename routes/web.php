@@ -52,6 +52,7 @@ Route::resource('blog', BlogController::class);
 
 
 
+
 /*
 Route::get('contact', function() {
     return "<h1> This is my Contact page</h1>";
