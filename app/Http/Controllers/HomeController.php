@@ -13,13 +13,13 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         // get hole data collection from DB table as an array
-        return DB::table('posts')->get();
+        // return DB::table('posts')->get();
 
         // get element with 'id=7' from DB table as an array
-        return DB::table('posts')->find(7);
+        // return DB::table('posts')->find(7);
 
         // get first element from DB table as an array
-        return DB::table('posts')->first();
+        // return DB::table('posts')->first();
         
         return view('home', compact('blogs'));
     }
