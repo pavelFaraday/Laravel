@@ -103,7 +103,21 @@ class HomeController extends Controller
 
 
 
+        /* -------------------------------------------------------------------------- */
+        /*                                 Aggtegates                                 */
+        /* -------------------------------------------------------------------------- */
 
+        // count rows in posts 'table'
+        // return DB::table('posts')->count(); // 3
+
+        // calculate sum of the `view` colomn values
+        // return DB::table('posts')->sum('views'); // 100+200+300
+        
+        // calculate average of the `view` colomn values
+        // return DB::table('posts')->avg('views'); // 200
+
+
+        dd('success');
 
 
         return view('home', compact('blogs'));
