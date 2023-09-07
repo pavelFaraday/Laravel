@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id(); // auto increment by default
-            $table->string('title'); // create field 'title' with datatype - varchar
-            $table->text('description'); // create field 'description' with datatype - text
-            $table->boolean('status'); // create field 'status' with datatype - boolean
+            $table->id();                 // auto increment by default
+            $table->string('title', 255); // create field 'title' with datatype - varchar, length 255
+            $table->text('description');  // create field 'description' with datatype - text
+            $table->boolean('status');    // create field 'status' with datatype - boolean
             $table->timestamps();
         });
     }
