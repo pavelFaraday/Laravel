@@ -27,6 +27,7 @@ class HomeController extends Controller
         // get single column 'title' data from DB table as an array
         // return DB::table('posts')->pluck('title', 'id');
 
+
         /* ---------------------- get data with "Where" condition -------------------- */
 
         // get specific element with "id=10" as an array
@@ -41,17 +42,14 @@ class HomeController extends Controller
         // get specific element with "status=!1" as an array
         // return DB::table('posts')->where('status', '!=', 1)->get();
 
-        /* -------------------------------------------------------------------------- */
-        /* -----------------                                       ------------------ */
-        /* -------------------------------------------------------------------------- */
-
-
 
 
 
         /* -------------------------------------------------------------------------- */
         /*                         insert data - INSERT method                        */
         /* -------------------------------------------------------------------------- */
+
+        /*
         DB::table('posts')->insert([
         [
             'title' => 'This is the test Data',
@@ -70,7 +68,26 @@ class HomeController extends Controller
         ]);
         
         dd('success');
+        */
 
+
+
+
+
+        /* -------------------------------------------------------------------------- */
+        /*                         update data - UPDATE method                        */
+        /* -------------------------------------------------------------------------- */
+
+        DB::table('posts')->where('id', 13)->update([
+            'title' => 'The Updated Data',
+            'description' => 'Updated description',
+            'status' => 1,
+        ]);
+
+        dd('success');
+
+
+        
         return view('home', compact('blogs'));
     }
 }
