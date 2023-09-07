@@ -23,6 +23,20 @@ class HomeController extends Controller
 
         // get single column 'title' data from DB table as an array
         return DB::table('posts')->pluck('title', 'id');
+
+        /* ------------------------------ Where clause ------------------------------ */
+
+        // get specific element with "id=10" as an array
+        return DB::table('posts')->where('id', '=', 10)->get();
+
+        // get specific element with "id>10" as an array
+        return DB::table('posts')->where('id', '>', 10)->get();
+
+        // get specific element with "id>10 && id<=21" as an array
+        return DB::table('posts')->where('id', '>', 10)->where('id', '<=', 21)->get();
+
+        // get specific element with "status=!1" as an array
+        return DB::table('posts')->where('status', '!=', 1)->get();
         
         return view('home', compact('blogs'));
     }
