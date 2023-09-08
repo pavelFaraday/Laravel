@@ -89,11 +89,12 @@ class HomeController extends Controller
 
 
        /* ------------------------ DELETE Data from Database ----------------------- */
-
+       /*
        Post::findOrFail(19)->delete();
        // OR
        Post::where('id', '=', 19)->delete();
 
        dd('success');
+       */
     }
 }
