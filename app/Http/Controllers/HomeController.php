@@ -59,7 +59,6 @@ class HomeController extends Controller
 
 
        /* ------------------------- INSERT Data in Database ------------------------ */
-
        /*
        $post = new Post();
 
@@ -78,13 +77,23 @@ class HomeController extends Controller
 
 
        /* ------------------------- UPDATE data in Database ------------------------ */
-       
+       /*
        $post = Post::find(17); // instead of "FIND" you can use also "where()-get()" combination query 👆
        $post->title = "This is updated title - that is cool :)";
        $post->description = "Hello World - This is post description :) ";
        $post->save(); 
 
        dd("success");
+       */
+
+
+
+       /* ------------------------ DELETE Data from Database ----------------------- */
+
+       Post::findOrFail(19)->delete();
+       // OR
+       Post::where('id', '=', 19)->delete();
+
+       dd('success');
     }
 }
-
