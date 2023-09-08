@@ -60,6 +60,7 @@ class HomeController extends Controller
 
        /* ------------------------- INSERT Data in Database ------------------------ */
 
+       /*
        $post = new Post();
 
        $post->title = 'post 4';
@@ -72,6 +73,18 @@ class HomeController extends Controller
        $post->save();
 
        dd('success');
+       */
+
+
+
+       /* ------------------------- UPDATE data in Database ------------------------ */
+       
+       $post = Post::find(17); // instead of "FIND" you can use also "where()-get()" combination query 👆
+       $post->title = "This is updated title - that is cool :)";
+       $post->description = "Hello World - This is post description :) ";
+       $post->save(); 
+
+       dd("success");
     }
 }
 
