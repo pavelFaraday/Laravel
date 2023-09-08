@@ -101,14 +101,12 @@ class HomeController extends Controller
        // return Post::onlyTrashed()->get(); 
 
        // Restore Soft deleted Data
-       Post::withTrashed()->find(18)->restore();
+       // Post::withTrashed()->find(18)->restore();
 
        // Delete Soft deleted Data permanently
-       Post::withTrashed()->find(18)->ForceDelete();
+       // Post::withTrashed()->find(18)->ForceDelete();
        
-       
-       dd('success');
+       // dd('success');
     
     }
 }
-
