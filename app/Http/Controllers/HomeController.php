@@ -98,8 +98,15 @@ class HomeController extends Controller
        /* ------------------------ SOFT DELETE Data from Database ----------------------- */
 
        // get only trashed column data 
-       return Post::onlyTrashed()->get(); 
+       // return Post::onlyTrashed()->get(); 
 
+       // Restore Soft deleted Data
+       Post::withTrashed()->find(18)->restore();
+
+       // Delete Soft deleted Data permanently
+       Post::withTrashed()->find(18)->ForceDelete();
+       
+       
        dd('success');
     
     }
