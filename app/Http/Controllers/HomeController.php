@@ -18,6 +18,9 @@ class HomeController extends Controller
        /*                                Eloquent ROM                                */
        /* -------------------------------------------------------------------------- */
 
+
+       /* -------------------------------- Get Data -------------------------------- */
+
        // all() == get() ||| get all data from Posts table |||  === DB::table('posts')->get();  ||| Returns an array[]
        // return Post::all(); 
 
@@ -33,9 +36,24 @@ class HomeController extends Controller
 
 
        // Extract data from received array
+       /*
        $posts = Post::all(); 
        foreach($posts as $post) {
            echo $post->title . "<br>";
        }
+       */
+
+
+
+       /* -------------------------- get data - 'WHERE' condition ------------------------- */
+       // get data from columns "views", which data is > then 100
+       // return Post::where('views', '>', 100)->get();
+
+       // complex filtering - strict condition --> throws NULL if any of "where" query will fail
+       // return Post::where('views', '>', 100)->where('id', '=', '16')->get();
+
+       // "orWhere" query complex filtering - light condition
+       // return Post::where('views', '>', 100)->orWhere('id', '=', '16')->get();
+
     }
 }
