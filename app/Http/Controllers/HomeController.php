@@ -46,6 +46,7 @@ class HomeController extends Controller
 
 
        /* -------------------------- get data - 'WHERE' condition ------------------------- */
+
        // get data from columns "views", which data is > then 100
        // return Post::where('views', '>', 100)->get();
 
@@ -55,5 +56,22 @@ class HomeController extends Controller
        // "orWhere" query complex filtering - light condition
        // return Post::where('views', '>', 100)->orWhere('id', '=', '16')->get();
 
+
+
+       /* ------------------------- INSERT Data in Database ------------------------ */
+
+       $post = new Post();
+
+       $post->title = 'post 4';
+       $post->description = "Georgia is Beautifull Country.";
+       $post->status = "1";
+       $post->created_at = date('Y-m-d');
+       $post->updated_at = date('Y-m-d');
+       $post->views = 400;
+
+       $post->save();
+
+       dd('success');
     }
 }
+
