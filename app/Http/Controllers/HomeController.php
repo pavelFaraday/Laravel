@@ -93,7 +93,12 @@ class HomeController extends Controller
        // Post::findOrFail(19)->delete();
        // OR
        // Post::where('id', '=', 18)->delete();
-       return Post::all(); 
+
+
+       /* ------------------------ SOFT DELETE Data from Database ----------------------- */
+
+       // get only trashed column data 
+       return Post::onlyTrashed()->get(); 
 
        dd('success');
     
