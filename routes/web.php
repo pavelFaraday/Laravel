@@ -42,8 +42,13 @@ Route::get('contact', [ContactController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'handleLogin'])->name('login.submit');
 
-// 2. Create Route for saving Image
+// Create Route for saving Image
 Route::post('/upload-file', [ImageController::class, 'handleImage'])->name('upload-file');
+
+// for redirection after uploading file successfully
+Route::get('/success', function(){
+    return '<h1>File Successfully uploaded</h1>';
+})->name('success');
 
 // Resource Controller
 Route::resource('blog', BlogController::class);

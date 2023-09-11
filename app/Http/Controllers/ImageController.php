@@ -20,11 +20,26 @@ class ImageController extends Controller
         $request->validate([
             'image' => ['required', 'min:100', 'max:500', 'mimes:png,jpg,gif'] // 500KB
         ]);
-
         
         // "image" means ==> "name="image"
         // store() is prebuilt method for saving file
         // file is stored in storage/app/public/images folder
         $request->image->store('/images');
+        
+
+
+        /* -------------------------------------------------------------------------- */
+        /*                        Redirection after file upload                       */
+        /* -------------------------------------------------------------------------- */
+
+
+        // Opton 1 - after storing file, redirect user tospecific URL
+        return redirect('/success');
+
+        // Opton 2 - after storing file, redirect user to file upload page (/home)
+        return redirect()->back();
+
+        // Opton 3 - what should happen after storing file? - redirect user t specific 'success' route
+        return redirect()->route('success');
     }
 }
