@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('content')
   <main role="main" class="container">
+    {{-- localhost/Laravel-Udemy/public/storage/images/myimage.png --}}
+    <img src="{{ asset('/storage/images/myimage.png') }}"> 
    <div class="col-md-4">
     <div class="card mt-5">
       <div class="card-body">
