@@ -50,6 +50,7 @@ Route::get('/success', function(){
     return '<h1>File Successfully uploaded</h1>';
 })->name('success');
 
+// for File Download
 Route::get('/download', [ImageController::class, 'download'])->name('download');
 
 // Resource Controller
