@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Client\ResponseSequence;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -41,5 +42,15 @@ class ImageController extends Controller
 
         // Opton 3 - what should happen after storing file? - redirect user t specific 'success' route
         return redirect()->route('success');
+    }
+
+
+    /* -------------------------------------------------------------------------- */
+    /*                                Download File                               */
+    /* -------------------------------------------------------------------------- */
+
+    public function download() 
+    {
+        return response()->download(public_path('storage/images/image3.png'));
     }
 }

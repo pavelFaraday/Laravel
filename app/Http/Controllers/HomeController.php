@@ -18,10 +18,6 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-
-        $posts = Post::all();
-        return response()->json($posts);
-        
-        // return view('home');
+        return view('home');
     }
 }
