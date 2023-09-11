@@ -1,9 +1,14 @@
 @extends('layouts.master')
 @section('content')
   <main role="main" class="container">
-    {{-- localhost/Laravel-Udemy/public/storage/images/myimage.png --}}
-    <img src="{{ asset('/storage/images/myimage.png') }}"> 
-   <div class="col-md-4">
+    <div class="col-md-4">
+     @if ($errors->any())
+       @foreach ($errors->all() as $error)
+           <div class="alert alert-danger">
+               {{ $error }}
+           </div>
+       @endforeach
+     @endif
     <div class="card mt-5">
       <div class="card-body">
         <form action="{{ route('upload-file') }}" method="POST" enctype="multipart/form-data">
