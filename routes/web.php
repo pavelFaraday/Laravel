@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SampleController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PersonController;
@@ -120,6 +121,8 @@ Route::fallback(function(){
     return "<h1 style='color:red;'>Route not exists</h1>";
 });
 */
+
+Route::get("/sample", [SampleController::class, "index"]);
 
 
 
