@@ -16,7 +16,7 @@ class TestMiddleware
     public function handle(Request $request, Closure $next): Response
     {
 
-        // all middleware logic goes here - all the validation and other stuff. If our validation succeeds, let's say the if the validation gets true, then we will return our request to next(). Otherwise, if our validation is false, then we will return our user or redirect our user to anywhere we like: It can be a root page or we can show a view page 
+        // all middleware logic goes here - all the validation and other stuff. If our validation succeeds, let's say the if the validation gets true, then we will return our request to next(). Otherwise, if our validation is false, then we will return our user or redirect our user to anywhere we like: It can be a rout page or we can show a view page 
 
         return $next($request);
     }
